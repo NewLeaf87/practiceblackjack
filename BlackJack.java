@@ -44,7 +44,7 @@ public class BlackJack {
                 dealerDeck.draw(playingDeck);
 
                 while(true){
-                    System.out.println("Your Hand:");
+                    System.out.println("Your Hand: " + playerDeck.toString());
                     System.out.print(playerDeck.toString());
                     System.out.println("your hand valued at: " + playerDeck.cardValues());
                     //Display Dealer Hand
@@ -56,7 +56,7 @@ public class BlackJack {
 
                     //HIT
                     if(response ==1){
-                        playerDeck.draw(playerDeck);
+                        playerDeck.draw(playingDeck);
                         System.out.println("you draw a : " + playerDeck.getCard(playerDeck.deckSize()-1).toString());
                         //Bust
                         if(playerDeck.cardValues()> 21){
@@ -86,7 +86,7 @@ public class BlackJack {
                     System.out.println("Dealer Draws: " + dealerDeck.getCard(dealerDeck.deckSize()-1).toString());
                 }
                 //display total for Dealer
-                System.out.println("Dealer's hamd is valued at: " + dealerDeck.cardValues());
+                System.out.println("Dealer's hand is valued at: " + dealerDeck.cardValues());
                 //if Dealer BUST
                 if((dealerDeck.cardValues() > 21) && endRound ==false){
                     System.out.println("Dealer busts! You Win!");
